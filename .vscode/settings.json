@@ -1,5 +1,7 @@
 {
   "dart.flutterGenerateLocalizationsOnSave": "all",
-  "dart.flutterHotReloadOnSave": "all",
-  "dart.hotReloadOnSave": "all"
+  "dart.flutterHotReloadOnSave": "manual",
+  "dart.hotReloadOnSave": "manual",
+  "dart.previewHotReloadOnSaveWatcher": true,
+  "dart.hotReloadProgress": "statusBar"
 }
