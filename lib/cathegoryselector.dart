@@ -10,9 +10,12 @@ class Cathegoryselector extends StatefulWidget {
 
 class _CathegoryselectorState extends State<Cathegoryselector> {
   List<Widget> cathegories = Settings.cathegories
-      .map((e) => Text(
-            e,
-            textAlign: TextAlign.center,
+      .map((e) => SizedBox(
+            width: 120,
+            child: Text(
+              e,
+              textAlign: TextAlign.center,
+            ),
           ))
       .toList();
   int count = Settings.cathegories.length;
@@ -35,17 +38,22 @@ class _CathegoryselectorState extends State<Cathegoryselector> {
             height: 2,
           ),
         ),
-        IconButton(
-          onPressed: () => {changeIndex(index + 1)},
-          icon: const Icon(Icons.arrow_right),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+              onPressed: () => {changeIndex(index + 1)},
+              icon: const Icon(Icons.arrow_right),
+            ),
+            cathegories[index],
+            IconButton(
+                alignment: Alignment.topCenter,
+                onPressed: () => {changeIndex(index - 1)},
+                icon: const Icon(
+                  Icons.arrow_left,
+                )),
+          ],
         ),
-        cathegories[index],
-        IconButton(
-            alignment: Alignment.topCenter,
-            onPressed: () => {changeIndex(index - 1)},
-            icon: const Icon(
-              Icons.arrow_left,
-            )),
         Expanded(
           child: Container(
             color: Colors.white,
