@@ -49,7 +49,7 @@ class _SearchbarState extends State<Searchbar> {
         ),
         const SizedBox(
           width: 40,
-          height: 70,
+          height: 0,
           child: Stack(
             alignment: Alignment.centerRight,
             clipBehavior: Clip.none,

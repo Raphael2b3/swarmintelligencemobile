@@ -3,6 +3,8 @@ import 'package:swarmintelligencemobile/cathegoryselector.dart';
 import 'package:swarmintelligencemobile/searchbar.dart';
 import 'package:swarmintelligencemobile/settingcircle.dart';
 
+import 'statement.dart';
+
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
 
@@ -20,7 +22,28 @@ class _SearchPageState extends State<SearchPage> {
     return Container(
       margin: const EdgeInsets.all(13),
       child: Column(
-        children: [Searchbar(onSearch), Cathegoryselector()],
+        children: [
+          Searchbar(onSearch),
+          const Cathegoryselector(),
+          Expanded(
+            child: ListView(
+              children: const [
+                Statement(),
+                Statement(text: "bin ich mal gespannt"),
+                Statement(),
+                Statement(text: "bin ich mal gespannt"),
+                Statement(),
+                Statement(text: "bin ich mal gespannt"),
+                Statement(),
+                Statement(text: "bin ich mal gespannt"),
+                Statement(),
+                Statement(text: "bin ich mal gespannt"),
+                Statement(),
+                Statement(text: "bin ich mal gespannt"),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
