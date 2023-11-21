@@ -1,27 +1,58 @@
 import 'package:flutter/material.dart';
+import 'package:swarmintelligencemobile/settings.dart';
 
 class Cathegoryselector extends StatefulWidget {
   const Cathegoryselector({Key? key}) : super(key: key);
 
   @override
-  _CathegoryselectorState createState() => _CathegoryselectorState();
+  State<Cathegoryselector> createState() => _CathegoryselectorState();
 }
 
 class _CathegoryselectorState extends State<Cathegoryselector> {
+  List<Widget> cathegories = Settings.cathegories
+      .map((e) => Text(
+            e,
+            textAlign: TextAlign.center,
+          ))
+      .toList();
+  int count = Settings.cathegories.length;
+  int index = 0;
+  void changeIndex(i) {
+    setState(() {
+      index = i % count;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 19,
-      child:
-          Stack(alignment: Alignment.center, fit: StackFit.expand, children: [
-        ListView.builder(
-          itemCount: 4,
-          itemBuilder: (context, i) => Center(
-              child: Text(
-            "fdsf",
-          )),
+    return Row(
+      //crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Expanded(
+          child: Container(
+            color: Colors.white,
+            height: 2,
+          ),
         ),
-      ]),
+        IconButton(
+          onPressed: () => {changeIndex(index + 1)},
+          icon: const Icon(Icons.arrow_right),
+        ),
+        cathegories[index],
+        IconButton(
+            alignment: Alignment.topCenter,
+            onPressed: () => {changeIndex(index - 1)},
+            icon: const Icon(
+              Icons.arrow_left,
+            )),
+        Expanded(
+          child: Container(
+            color: Colors.white,
+            height: 2,
+          ),
+        ),
+      ],
     );
   }
 }
