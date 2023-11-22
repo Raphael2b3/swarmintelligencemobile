@@ -25,18 +25,21 @@ class _SearchbarState extends State<Searchbar> {
       children: [
         Expanded(
           child: Container(
-            padding: const EdgeInsets.only(right: 30),
-            alignment: Alignment.center,
-            height: 80,
+            padding: const EdgeInsets.only(
+              right: 30,
+            ),
+            alignment: Alignment.centerLeft,
+            height: 50,
             decoration: const BoxDecoration(
                 color: Color.fromRGBO(37, 37, 37, 1),
                 borderRadius: BorderRadius.all(Radius.circular(10))),
             child: TextField(
               textAlignVertical: TextAlignVertical.center,
-              style: const TextStyle(fontSize: 18, color: Colors.white),
+              style: const TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+              ),
               decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.red,
                   suffixIcon: IconButton(
                       onPressed: () => {},
                       icon: const Icon(
@@ -46,8 +49,11 @@ class _SearchbarState extends State<Searchbar> {
                   hintText: "Search...",
                   contentPadding: const EdgeInsets.only(
                     left: 13,
+                    bottom: 0,
+                    top: 0,
+                    right: 0,
                   ),
-                  border: InputBorder.none),
+                  border: OutlineInputBorder(borderSide: BorderSide.none)),
               cursorColor: const Color(0xFFFFFFFF),
             ),
           ),
