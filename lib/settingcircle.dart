@@ -10,13 +10,23 @@ class SettingCircle extends StatefulWidget {
 class _SettingCircleState extends State<SettingCircle> {
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      height: 62,
-      width: 62,
-      child: Container(
-        decoration: const BoxDecoration(
-            color: Colors.blueAccent,
-            borderRadius: BorderRadius.all(Radius.circular(40))),
+    return SizedBox(
+      width: 15,
+      height: 0,
+      child: Stack(
+        alignment: Alignment.centerRight,
+        clipBehavior: Clip.none,
+        children: [
+          Positioned(
+            height: 50,
+            width: 50,
+            child: Container(
+              decoration: const BoxDecoration(
+                  color: Colors.blueAccent,
+                  borderRadius: BorderRadius.all(Radius.circular(40))),
+            ),
+          )
+        ],
       ),
     );
   }

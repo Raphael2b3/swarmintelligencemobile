@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swarmintelligencemobile/Styles.dart';
 
 import 'settingcircle.dart';
 
@@ -29,7 +30,7 @@ class _SearchbarState extends State<Searchbar> {
             alignment: Alignment.centerLeft,
             height: 40,
             decoration: const BoxDecoration(
-                color: Color.fromRGBO(37, 37, 37, 1),
+                color: AppColors.highlightdark,
                 borderRadius: BorderRadius.all(Radius.circular(10))),
             child: TextField(
               textAlignVertical: TextAlignVertical.center,
@@ -48,20 +49,13 @@ class _SearchbarState extends State<Searchbar> {
                   contentPadding: const EdgeInsets.only(
                     left: 13,
                   ),
-                  border: OutlineInputBorder(borderSide: BorderSide.none)),
+                  border:
+                      const OutlineInputBorder(borderSide: BorderSide.none)),
               cursorColor: const Color(0xFFFFFFFF),
             ),
           ),
         ),
-        const SizedBox(
-          width: 30,
-          height: 0,
-          child: Stack(
-            alignment: Alignment.centerRight,
-            clipBehavior: Clip.none,
-            children: [SettingCircle()],
-          ),
-        )
+        const SettingCircle()
       ],
     );
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:swarmintelligencemobile/cathegoryselector.dart';
 import 'package:swarmintelligencemobile/searchbar.dart';
-import 'package:swarmintelligencemobile/settingcircle.dart';
 
 import 'statement.dart';
 

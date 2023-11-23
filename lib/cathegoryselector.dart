@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swarmintelligencemobile/Styles.dart';
 import 'package:swarmintelligencemobile/settings.dart';
 
 class Cathegoryselector extends StatefulWidget {
@@ -10,8 +11,8 @@ class Cathegoryselector extends StatefulWidget {
 
 class _CathegoryselectorState extends State<Cathegoryselector> {
   List<Widget> cathegories = Settings.cathegories
-      .map((e) => SizedBox(
-            width: 120,
+      .map((e) => Container(
+            constraints: const BoxConstraints(minWidth: 100),
             child: Text(
               e,
               textAlign: TextAlign.center,
@@ -21,15 +22,16 @@ class _CathegoryselectorState extends State<Cathegoryselector> {
   int count = Settings.cathegories.length;
   int index = 0;
   void changeIndex(i) {
+    if (0 > i || i >= count) return;
+
     setState(() {
-      index = i % count;
+      index = i;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      //crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Expanded(
@@ -38,21 +40,27 @@ class _CathegoryselectorState extends State<Cathegoryselector> {
             height: 2,
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(
-              onPressed: () => {changeIndex(index + 1)},
-              icon: const Icon(Icons.arrow_right),
-            ),
-            cathegories[index],
-            IconButton(
-                alignment: Alignment.topCenter,
-                onPressed: () => {changeIndex(index - 1)},
-                icon: const Icon(
-                  Icons.arrow_left,
-                )),
-          ],
+        Container(
+          margin: const EdgeInsets.all(5),
+          decoration: const BoxDecoration(
+            color: AppColors.highlightdark,
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+          ),
+          child: Row(
+            children: [
+              IconButton(
+                onPressed: () => {changeIndex(index + 1)},
+                icon: const Icon(Icons.arrow_right),
+              ),
+              cathegories[index],
+              IconButton(
+                  alignment: Alignment.topCenter,
+                  onPressed: () => {changeIndex(index - 1)},
+                  icon: const Icon(
+                    Icons.arrow_left,
+                  )),
+            ],
+          ),
         ),
         Expanded(
           child: Container(

@@ -1,9 +1,10 @@
+import 'package:swarmintelligencemobile/Styles.dart';
 import 'package:swarmintelligencemobile/searchpage.dart';
 
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const SafeArea(child: MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,10 +15,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Swarmintelligence Mobile",
-      home: const Home(),
+      home: const SafeArea(child: Home()),
       theme: ThemeData(
         textTheme: const TextTheme(
-          bodyMedium: TextStyle(color: Colors.white, fontSize: 18),
+          bodyMedium: TextStyle(color: Colors.white, fontSize: 14),
         ),
       ),
     );
@@ -44,7 +45,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF161616),
+      backgroundColor: AppColors.backgroundark,
       body: _pages.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color(0x00000000),
@@ -59,7 +60,7 @@ class _HomeState extends State<Home> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.black26,
+        selectedItemColor: AppColors.highlightdark,
         onTap: _onItemTapped,
       ),
     );
