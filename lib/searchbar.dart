@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 import 'settingcircle.dart';
@@ -13,7 +11,7 @@ class Searchbar extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _SearchbarState createState() => _SearchbarState();
+  State<Searchbar> createState() => _SearchbarState();
 }
 
 class _SearchbarState extends State<Searchbar> {
@@ -29,7 +27,7 @@ class _SearchbarState extends State<Searchbar> {
               right: 30,
             ),
             alignment: Alignment.centerLeft,
-            height: 50,
+            height: 40,
             decoration: const BoxDecoration(
                 color: Color.fromRGBO(37, 37, 37, 1),
                 borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -49,9 +47,6 @@ class _SearchbarState extends State<Searchbar> {
                   hintText: "Search...",
                   contentPadding: const EdgeInsets.only(
                     left: 13,
-                    bottom: 0,
-                    top: 0,
-                    right: 0,
                   ),
                   border: OutlineInputBorder(borderSide: BorderSide.none)),
               cursorColor: const Color(0xFFFFFFFF),
