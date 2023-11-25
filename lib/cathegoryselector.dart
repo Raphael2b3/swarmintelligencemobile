@@ -42,6 +42,7 @@ class _CathegoryselectorState extends State<Cathegoryselector> {
         ),
         Container(
           margin: const EdgeInsets.all(5),
+          height: 30,
           decoration: const BoxDecoration(
             color: AppColors.highlightdark,
             borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -49,12 +50,15 @@ class _CathegoryselectorState extends State<Cathegoryselector> {
           child: Row(
             children: [
               IconButton(
+                alignment: Alignment.center,
+                padding: const EdgeInsets.all(0),
                 onPressed: () => {changeIndex(index + 1)},
                 icon: const Icon(Icons.arrow_right),
               ),
               cathegories[index],
               IconButton(
-                  alignment: Alignment.topCenter,
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.all(0),
                   onPressed: () => {changeIndex(index - 1)},
                   icon: const Icon(
                     Icons.arrow_left,
