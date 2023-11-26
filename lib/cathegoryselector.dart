@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/Styles.dart';
+import 'package:swarmintelligencemobile/styles.dart';
 import 'package:swarmintelligencemobile/settings.dart';
 
 class Cathegoryselector extends StatefulWidget {
