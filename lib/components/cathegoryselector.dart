@@ -1,28 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/styles.dart';
 import 'package:swarmintelligencemobile/settings.dart';
+import 'package:swarmintelligencemobile/styles.dart';
 
 class Cathegoryselector extends StatefulWidget {
-  const Cathegoryselector({Key? key}) : super(key: key);
+  final List<String> cathegories;
+  final Widget extraWidget;
+  const Cathegoryselector({Key? key,required this.cathegories,this.extraWidget = const SizedBox.shrink()}) : super(key: key);
 
   @override
   State<Cathegoryselector> createState() => _CathegoryselectorState();
 }
 
 class _CathegoryselectorState extends State<Cathegoryselector> {
-  List<Widget> cathegories = Settings.cathegories
-      .map((e) => Container(
-            constraints: const BoxConstraints(minWidth: 100),
-            child: Text(
-              e,
-              textAlign: TextAlign.center,
-            ),
-          ))
-      .toList();
-  int count = Settings.cathegories.length;
+  
   int index = 0;
+   
   void changeIndex(i) {
-    if (0 > i || i >= count) return;
+    if (0 > i || i >= widget.cathegories.length) return;
 
     setState(() {
       index = i;
@@ -55,7 +49,14 @@ class _CathegoryselectorState extends State<Cathegoryselector> {
                 onPressed: () => {changeIndex(index + 1)},
                 icon: const Icon(Icons.arrow_right),
               ),
-              cathegories[index],
+              Container(
+                constraints: const BoxConstraints(minWidth: 100),
+                child: Text(
+                  widget.cathegories[index],
+                  textAlign: TextAlign.center,
+            ),
+              )
+              ,
               IconButton(
                   alignment: Alignment.center,
                   padding: const EdgeInsets.all(0),
@@ -72,6 +73,7 @@ class _CathegoryselectorState extends State<Cathegoryselector> {
             height: 2,
           ),
         ),
+        widget.extraWidget
       ],
     );
   }

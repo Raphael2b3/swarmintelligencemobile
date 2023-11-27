@@ -4,11 +4,12 @@ import 'package:swarmintelligencemobile/styles.dart';
 import 'settingcircle.dart';
 
 class Searchbar extends StatefulWidget {
-  final Function(String) onSearch;
+  final Function(String)? onSearch;
 
   const Searchbar(
-    this.onSearch, {
+     {
     Key? key,
+    this.onSearch,
   }) : super(key: key);
 
   @override

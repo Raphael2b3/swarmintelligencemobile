@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AddButton extends StatefulWidget {
-  const AddButton({super.key});
+  final void Function() onPressed;
+  const AddButton({super.key,required this.onPressed});
 
   @override
   State<AddButton> createState() => AddButtonState();
@@ -18,7 +19,7 @@ class AddButtonState extends State<AddButton> {
         color: Colors.grey
 
       ),
-      child: IconButton(icon: const Icon(Icons.add), onPressed: ()=>(),),
+      child: IconButton(icon: const Icon(Icons.add),onPressed: widget.onPressed,),
     );
   }
 }

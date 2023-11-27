@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/cathegoryselector.dart';
-import 'package:swarmintelligencemobile/searchbar.dart';
+import 'package:swarmintelligencemobile/components/addbutton.dart';
+import 'package:swarmintelligencemobile/components/cathegoryselector.dart';
+import 'package:swarmintelligencemobile/components/reloadbutton.dart';
+import 'package:swarmintelligencemobile/components/searchbar.dart';
+import 'package:swarmintelligencemobile/settings.dart';
 
-import 'statement.dart';
+import 'components/statement.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -22,8 +25,8 @@ class _SearchPageState extends State<SearchPage> {
       margin: const EdgeInsets.all(13),
       child: Column(
         children: [
-          Searchbar(onSearch),
-          const Cathegoryselector(),
+          Searchbar(),
+          Cathegoryselector(cathegories: Settings.cathegories, extraWidget: ReloadButton(),),
           Expanded(
             child: ListView(
               children: const [

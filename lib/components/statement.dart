@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/addbutton.dart';
-import 'package:swarmintelligencemobile/votebuttons.dart';
+import 'package:swarmintelligencemobile/components/addbutton.dart';
+import 'package:swarmintelligencemobile/components/votebuttons.dart';
 
 class Statement extends StatefulWidget {
   final String text;
@@ -61,7 +61,9 @@ class _StatementState extends State<Statement> {
           ),
           Container(
             margin: const EdgeInsets.only(top: 30),
-            child:const  Row(mainAxisAlignment:MainAxisAlignment.spaceBetween , children: [Upvotebutton(), AddButton(),Downvotebutton()]),
+            child: Row(mainAxisAlignment:MainAxisAlignment.spaceBetween ,
+            children: 
+            [const Upvotebutton(), AddButton(onPressed: ()=>{}),const Downvotebutton()]),
           )
         ],
       ),
