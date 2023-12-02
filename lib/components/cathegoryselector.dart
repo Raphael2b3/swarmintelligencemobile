@@ -5,16 +5,19 @@ import 'package:swarmintelligencemobile/styles.dart';
 class Cathegoryselector extends StatefulWidget {
   final List<String> cathegories;
   final Widget extraWidget;
-  const Cathegoryselector({Key? key,required this.cathegories,this.extraWidget = const SizedBox.shrink()}) : super(key: key);
+  const Cathegoryselector(
+      {Key? key,
+      required this.cathegories,
+      this.extraWidget = const SizedBox.shrink()})
+      : super(key: key);
 
   @override
   State<Cathegoryselector> createState() => _CathegoryselectorState();
 }
 
 class _CathegoryselectorState extends State<Cathegoryselector> {
-  
   int index = 0;
-   
+
   void changeIndex(i) {
     if (0 > i || i >= widget.cathegories.length) return;
 
@@ -54,9 +57,8 @@ class _CathegoryselectorState extends State<Cathegoryselector> {
                 child: Text(
                   widget.cathegories[index],
                   textAlign: TextAlign.center,
-            ),
-              )
-              ,
+                ),
+              ),
               IconButton(
                   alignment: Alignment.center,
                   padding: const EdgeInsets.all(0),
@@ -68,12 +70,19 @@ class _CathegoryselectorState extends State<Cathegoryselector> {
           ),
         ),
         Expanded(
-          child: Container(
-            color: Colors.white,
-            height: 2,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Expanded(
+                child: Container(
+                  color: Colors.white,
+                  height: 2,
+                ),
+              ),
+              widget.extraWidget
+            ],
           ),
         ),
-        widget.extraWidget
       ],
     );
   }

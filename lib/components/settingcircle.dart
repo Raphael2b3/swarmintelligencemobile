@@ -8,18 +8,19 @@ class SettingCircle extends StatefulWidget {
 }
 
 class _SettingCircleState extends State<SettingCircle> {
+  final double height = 50;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: 15,
-      height: 0,
+      height: height,
       child: Stack(
         alignment: Alignment.centerRight,
         clipBehavior: Clip.none,
         children: [
           Positioned(
-            height: 50,
-            width: 50,
+            height: height,
+            width: height,
             child: Container(
               decoration: const BoxDecoration(
                   color: Colors.blueAccent,

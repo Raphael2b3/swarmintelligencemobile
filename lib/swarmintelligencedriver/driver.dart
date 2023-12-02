@@ -1,8 +1,3 @@
-class Driver{
-
-  static void createUser() {
-
-  }
-
-
+class Driver {
+  static void createUser() {}
 }

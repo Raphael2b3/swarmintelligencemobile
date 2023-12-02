@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swarmintelligencemobile/styles.dart';
 
 class ReloadButton extends StatefulWidget {
   const ReloadButton({super.key});
@@ -10,6 +11,15 @@ class ReloadButton extends StatefulWidget {
 class _ReloadButtonState extends State<ReloadButton> {
   @override
   Widget build(BuildContext context) {
-    return Container(child: IconButton(icon: Icon(Icons.refresh), onPressed: ()=>(), ),);
+    return Container(
+      margin: const EdgeInsets.only(bottom: 7, top: 7, left: 5),
+      decoration: BoxDecoration(
+          color: AppColors.highlightdark,
+          borderRadius: BorderRadius.circular(100)),
+      child: IconButton(
+        icon: const Icon(Icons.refresh),
+        onPressed: () => (),
+      ),
+    );
   }
 }
