@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/styles.dart';
+import 'package:swarmintelligencemobile/components/styles.dart';
 
 class ReloadButton extends StatefulWidget {
   const ReloadButton({super.key});

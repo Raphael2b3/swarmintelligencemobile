@@ -1,5 +1,5 @@
-import 'package:swarmintelligencemobile/styles.dart';
-import 'package:swarmintelligencemobile/searchpage.dart';
+import 'package:swarmintelligencemobile/components/styles.dart';
+import 'package:swarmintelligencemobile/components/pages/searchpage.dart';
 
 import 'package:flutter/material.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/components/Statement/addbutton.dart';
-import 'package:swarmintelligencemobile/components/Statement/votebuttons.dart';
+import 'package:swarmintelligencemobile/components/ui/buttons/addbutton.dart';
+import 'package:swarmintelligencemobile/components/ui/buttons/votebutton.dart';
 
 class StatementMoreOptions extends StatefulWidget {
   const StatementMoreOptions({super.key});
@@ -28,9 +28,9 @@ class _StatementMoreOptionsState extends State<StatementMoreOptions> {
           ),
           Row(
             children: [
-              const Upvotebutton(),
+              const Votebutton.up(),
               AddButton(onPressed: () => {}),
-              const Downvotebutton(),
+              const Votebutton.down(),
             ],
           )
         ],
