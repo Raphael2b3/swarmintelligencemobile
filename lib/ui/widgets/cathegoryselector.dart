@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/settings.dart';
-import 'package:swarmintelligencemobile/components/styles.dart';
+import 'package:swarmintelligencemobile/constants/settings.dart';
+import 'package:swarmintelligencemobile/constants/styles.dart';
 
 class Cathegoryselector extends StatefulWidget {
   final List<String> cathegories;

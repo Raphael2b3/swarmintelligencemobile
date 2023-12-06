@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/components/ui/buttons/addbutton.dart';
-import 'package:swarmintelligencemobile/components/statement/statementmoreoptions.dart';
-import 'package:swarmintelligencemobile/components/ui/cathegoryselector.dart';
-import 'package:swarmintelligencemobile/components/ui/buttons/reloadbutton.dart';
-import 'package:swarmintelligencemobile/components/ui/searchbar.dart';
-import 'package:swarmintelligencemobile/settings.dart';
+import 'package:swarmintelligencemobile/ui/widgets/statement/statementmoreoptions.dart';
+import 'package:swarmintelligencemobile/ui/widgets/cathegoryselector.dart';
+import 'package:swarmintelligencemobile/ui/widgets/common/buttons/reloadbutton.dart';
+import 'package:swarmintelligencemobile/ui/widgets/searchbar.dart';
+import 'package:swarmintelligencemobile/constants/settings.dart';
 
-import '../statement/statement.dart';
+import '../widgets/statement/statement.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);

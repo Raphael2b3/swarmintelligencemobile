@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/components/styles.dart';
+import 'package:swarmintelligencemobile/constants/styles.dart';
 
-import 'buttons/settingcircle.dart';
+import 'common/buttons/settingcircle.dart';
 
 class Searchbar extends StatefulWidget {
   final Function(String)? onSearch;
