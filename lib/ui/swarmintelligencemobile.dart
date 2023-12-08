@@ -7,13 +7,12 @@ class SwarmIntelligenceMobileApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Swarmintelligence Mobile",
-      home: const SafeArea(child: Home()),
-      theme: ThemeData(
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(color: Colors.white, fontSize: 14),
-        ),
-      ),
-    );
+        title: "Swarmintelligence Mobile",
+        home: const Home(),
+        theme: ThemeData(
+          textTheme: const TextTheme(
+            bodyMedium: TextStyle(color: Colors.white, fontSize: 14),
+          ),
+        ));
   }
 }

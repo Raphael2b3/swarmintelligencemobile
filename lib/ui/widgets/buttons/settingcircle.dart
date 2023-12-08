@@ -11,7 +11,7 @@ class _SettingCircleState extends State<SettingCircle> {
   final double height = 50;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 15,
       height: height,
       child: Stack(

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:swarmintelligencemobile/constants/styles.dart';
 
-import 'common/buttons/settingcircle.dart';
+import 'buttons/settingcircle.dart';
 
 class Searchbar extends StatefulWidget {
   final Function(String)? onSearch;
 
   const Searchbar({
-    Key? key,
+    super.key,
     this.onSearch,
-  }) : super(key: key);
+  });
 
   @override
   State<Searchbar> createState() => _SearchbarState();

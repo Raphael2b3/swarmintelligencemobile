@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:swarmintelligencemobile/constants/styles.dart';
+import 'package:swarmintelligencemobile/ui/widgets/buttons/clickabletext.dart';
 
-class TagList extends StatelessWidget {
+class TagList extends StatefulWidget {
   final List<String> tags;
 
   const TagList({super.key, this.tags = const []});
 
   @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: tags.map((e) => TagText(e)).toList(),
-    );
-  }
+  State<TagList> createState() => _TagListState();
 }
 
-class TagText extends StatelessWidget {
-  final String tag;
-  const TagText(this.tag, {super.key});
-
+class _TagListState extends State<TagList> {
   @override
   Widget build(BuildContext context) {
-    return Text("#$tag");
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: widget.tags
+          .map((e) => ClickableText(text: "#$e ", onClick: () {}))
+          .toList(),
+    );
   }
 }

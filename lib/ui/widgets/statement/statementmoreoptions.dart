@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/ui/widgets/common/buttons/addbutton.dart';
-import 'package:swarmintelligencemobile/ui/widgets/common/buttons/votebutton.dart';
+import 'package:swarmintelligencemobile/ui/widgets/buttons/addbutton.dart';
+import 'package:swarmintelligencemobile/ui/widgets/buttons/votebutton.dart';
 
 class StatementMoreOptions extends StatefulWidget {
   const StatementMoreOptions({super.key});
