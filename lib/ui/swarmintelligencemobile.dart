@@ -1,18 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:swarmintelligencemobile/ui/screens/home.dart';
+import 'package:swarmintelligencemobile/ui/screens/pages/search.dart';
+import 'package:swarmintelligencemobile/ui/screens/pages/setting.dart';
 
 class SwarmIntelligenceMobileApp extends StatelessWidget {
   const SwarmIntelligenceMobileApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return SafeArea(
+      child: MaterialApp.router(
         title: "Swarmintelligence Mobile",
-        home: const Home(),
+        routerConfig: _routes,
         theme: ThemeData(
           textTheme: const TextTheme(
             bodyMedium: TextStyle(color: Colors.white, fontSize: 14),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
+
+final _routes = GoRouter(initialLocation: "/history", routes: [
+  StatefulShellRoute.indexedStack(
+      builder: (context, state, child) =>
+          Home(cIndex: child.currentIndex, child: child),
+      branches: [
+        StatefulShellBranch(routes: [
+          GoRoute(
+            path: "/history",
+            builder: (context, state) => const SettingPage(),
+          ),
+          GoRoute(
+            path: "/settings",
+            builder: (context, state) => const SettingPage(),
+          )
+        ]),
+        StatefulShellBranch(routes: [
+          GoRoute(
+            path: "/search",
+            builder: (context, state) => const SearchPage(),
+          ),
+        ])
+      ])
+]);

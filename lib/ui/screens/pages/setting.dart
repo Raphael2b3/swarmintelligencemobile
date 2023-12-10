@@ -25,8 +25,8 @@ class _SettingPageState extends State<SettingPage> {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(13),
-      child: Column(
-        children: [],
+      child: const Column(
+        children: [Text("data"), Text("data"), Text("data")],
       ),
     );
   }
