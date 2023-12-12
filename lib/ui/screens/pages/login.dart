@@ -16,7 +16,9 @@ class _LoginPageState extends State<LoginPage> {
       child: Column(
         children: [
           Title(color: Colors.white, child: const Text("Login")),
-          const DefaultTextField()
+          DefaultTextField(
+            onClick: () {},
+          )
         ],
       ),
     );

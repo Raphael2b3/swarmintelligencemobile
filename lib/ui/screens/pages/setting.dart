@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:swarmintelligencemobile/ui/widgets/buttons/cathegorybutton.dart';
 import 'package:swarmintelligencemobile/ui/widgets/buttons/clickabletext.dart';
+import 'package:swarmintelligencemobile/ui/widgets/statement/statement.dart';
+import 'package:swarmintelligencemobile/ui/widgets/userinformation.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
@@ -18,10 +21,10 @@ class _SettingPageState extends State<SettingPage> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ClickableText(
-            text: "Login $a",
+        const UserInformations(),
+        CathegoryButton(
+            text: "Login",
             onClick: () {
-              print("Hiiiiiiiiiiiiiiiiiiiiiiiiiiii");
               context.go("/settings/login");
               setState(() {
                 a++;

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 import 'package:swarmintelligencemobile/constants/styles.dart';
+import 'package:swarmintelligencemobile/models/UserAuth.dart';
 
 class Home extends StatefulWidget {
   final Widget child;
@@ -28,29 +30,34 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.backgroundark,
-      body: Container(margin: const EdgeInsets.all(13), child: widget.child),
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: changeTab,
-        currentIndex: widget.cIndex,
-        backgroundColor: const Color(0x00000000),
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.history),
-            label: 'History',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
-        unselectedItemColor: Colors.blueGrey,
-        selectedItemColor: const Color.fromARGB(255, 255, 255, 255),
+    List<BottomNavigationBarItem> items = const [
+      BottomNavigationBarItem(
+        icon: Icon(Icons.history),
+        label: 'History',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.home),
+        label: 'Home',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.settings),
+        label: 'Settings',
+      ),
+    ];
+
+    return ChangeNotifierProvider<UserAuth>(
+      create: (context) => UserAuth(),
+      child: Scaffold(
+        backgroundColor: AppColors.backgroundark,
+        body: Container(margin: const EdgeInsets.all(13), child: widget.child),
+        bottomNavigationBar: BottomNavigationBar(
+          onTap: changeTab,
+          currentIndex: widget.cIndex,
+          backgroundColor: const Color(0x00000000),
+          items: items,
+          unselectedItemColor: Colors.blueGrey,
+          selectedItemColor: const Color.fromARGB(255, 255, 255, 255),
+        ),
       ),
     );
   }

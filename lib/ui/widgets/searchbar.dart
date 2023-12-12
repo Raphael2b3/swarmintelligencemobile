@@ -23,10 +23,15 @@ class _SearchbarState extends State<Searchbar> {
 
   @override
   Widget build(BuildContext context) {
-    return const Stack(
+    return Stack(
       clipBehavior: Clip.none,
       alignment: Alignment.centerRight,
-      children: [DefaultTextField(), SettingCircle()],
+      children: [
+        DefaultTextField(
+          onClick: () {},
+        ),
+        const SettingCircle()
+      ],
     );
   }
 }
