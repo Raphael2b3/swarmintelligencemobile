@@ -9,22 +9,26 @@ import 'package:swarmintelligencemobile/constants/settings.dart';
 
 import '../../widgets/statement/statement.dart';
 
-class SettingPage extends StatefulWidget {
-  const SettingPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<SettingPage> createState() => _SettingPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _SettingPageState extends State<SettingPage> {
-  void onFilterChange(int state) {}
-
-  void onSearch(String query) {}
-
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [Text("data"), Text("data"), Text("data")],
+    return Container(
+      margin: const EdgeInsets.all(13),
+      child: Column(
+        children: [
+          Title(color: Colors.white, child: Text("Login")),
+          Text("data"),
+          Text("data"),
+          Text("data")
+        ],
+      ),
     );
   }
 }

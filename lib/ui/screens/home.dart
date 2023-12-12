@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backgroundark,
-      body: widget.child,
+      body: Container(margin: const EdgeInsets.all(13), child: widget.child),
       bottomNavigationBar: BottomNavigationBar(
         onTap: changeTab,
         currentIndex: widget.cIndex,

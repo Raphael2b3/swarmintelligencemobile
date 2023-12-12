@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:swarmintelligencemobile/states/query.dart';
+import 'package:swarmintelligencemobile/ui/widgets/content_list.dart';
 import 'package:swarmintelligencemobile/ui/widgets/statement/statementmoreoptions.dart';
 import 'package:swarmintelligencemobile/ui/widgets/cathegoryselector.dart';
 import 'package:swarmintelligencemobile/ui/widgets/buttons/reloadbutton.dart';
@@ -23,24 +24,15 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(13),
-      child: Column(
-        children: [
-          const Searchbar(),
-          const Cathegoryselector(
-            cathegories: Settings.cathegories,
-            extraWidget: ReloadButton(),
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: 100,
-              itemBuilder: (context, index) =>
-                  const Statement(text: "geiler schei0"),
-            ),
-          )
-        ],
-      ),
+    return const Column(
+      children: [
+        Searchbar(),
+        Cathegoryselector(
+          cathegories: Settings.cathegories,
+          extraWidget: ReloadButton(),
+        ),
+        ContentList()
+      ],
     );
   }
 }

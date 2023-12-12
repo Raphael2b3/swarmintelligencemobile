@@ -9,22 +9,23 @@ import 'package:swarmintelligencemobile/constants/settings.dart';
 
 import '../../widgets/statement/statement.dart';
 
-class SettingPage extends StatefulWidget {
-  const SettingPage({super.key});
+class HistoryPage extends StatefulWidget {
+  const HistoryPage({super.key});
 
   @override
-  State<SettingPage> createState() => _SettingPageState();
+  State<HistoryPage> createState() => _HistoryPageState();
 }
 
-class _SettingPageState extends State<SettingPage> {
+class _HistoryPageState extends State<HistoryPage> {
   void onFilterChange(int state) {}
-
-  void onSearch(String query) {}
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [Text("data"), Text("data"), Text("data")],
+    return Container(
+      margin: const EdgeInsets.all(13),
+      child: const Column(
+        children: [Text("data"), Text("data"), Text("data")],
+      ),
     );
   }
 }
