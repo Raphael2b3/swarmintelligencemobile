@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:swarmintelligencemobile/ui/screens/home.dart';
 import 'package:swarmintelligencemobile/ui/screens/pages/history.dart';
+import 'package:swarmintelligencemobile/ui/screens/pages/login.dart';
+import 'package:swarmintelligencemobile/ui/screens/pages/register.dart';
 import 'package:swarmintelligencemobile/ui/screens/pages/search.dart';
 import 'package:swarmintelligencemobile/ui/screens/pages/setting.dart';
 
@@ -43,9 +45,18 @@ final _routes = GoRouter(initialLocation: "/history", routes: [
         ]),
         StatefulShellBranch(routes: [
           GoRoute(
-            path: "/settings",
-            builder: (context, state) => const SettingPage(),
-          )
+              path: "/settings",
+              builder: (context, state) => const SettingPage(),
+              routes: [
+                GoRoute(
+                  path: "login",
+                  builder: (context, state) => const LoginPage(),
+                ),
+                GoRoute(
+                  path: "register",
+                  builder: (context, state) => const RegisterPage(),
+                )
+              ])
         ])
       ])
 ]);

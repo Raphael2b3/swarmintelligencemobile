@@ -3,7 +3,7 @@ import 'package:swarmintelligencemobile/constants/styles.dart';
 
 class ClickableText extends StatefulWidget {
   final String text;
-  final Function onClick;
+  final void Function() onClick;
   const ClickableText({super.key, required this.text, required this.onClick});
 
   @override
@@ -17,7 +17,7 @@ class _ClickableTextState extends State<ClickableText> {
       color: AppColors.highlightdark,
       borderRadius: BorderRadius.circular(5),
       child: InkWell(
-        onTap: () {},
+        onTap: widget.onClick,
         borderRadius: BorderRadius.circular(5),
         child: Text(
           widget.text,

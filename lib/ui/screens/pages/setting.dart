@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:swarmintelligencemobile/states/query.dart';
-import 'package:swarmintelligencemobile/ui/widgets/statement/statementmoreoptions.dart';
-import 'package:swarmintelligencemobile/ui/widgets/cathegoryselector.dart';
-import 'package:swarmintelligencemobile/ui/widgets/buttons/reloadbutton.dart';
-import 'package:swarmintelligencemobile/ui/widgets/searchbar.dart';
-import 'package:swarmintelligencemobile/constants/settings.dart';
-
-import '../../widgets/statement/statement.dart';
+import 'package:go_router/go_router.dart';
+import 'package:swarmintelligencemobile/ui/widgets/buttons/clickabletext.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
@@ -20,11 +13,23 @@ class _SettingPageState extends State<SettingPage> {
   void onFilterChange(int state) {}
 
   void onSearch(String query) {}
-
+  int a = 0;
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [Text("data"), Text("data"), Text("data")],
+    return Column(
+      children: [
+        ClickableText(
+            text: "Login $a",
+            onClick: () {
+              print("Hiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+              context.go("/settings/login");
+              setState(() {
+                a++;
+              });
+            }),
+        Text("data"),
+        Text("data"),
+      ],
     );
   }
 }
