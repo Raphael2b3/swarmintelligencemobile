@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
+import 'package:swarmintelligencemobile/states/userauth.dart';
+import 'package:swarmintelligencemobile/ui/widgets/inputs/buttons/votebutton.dart';
 import 'package:swarmintelligencemobile/ui/widgets/inputs/default_textfield.dart';
 
 class LoginPage extends StatelessWidget {
@@ -6,16 +10,31 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(13),
-      child: Column(
-        children: [
-          Title(color: Colors.white, child: const Text("Login")),
-          DefaultTextField(
-            onClick: () {},
-          )
-        ],
-      ),
+    return Column(
+      children: [
+        const Text(
+          "Login",
+          style: TextStyle(fontSize: 20),
+        ),
+        const DefaultTextField(
+          hintText: "Username...",
+        ),
+        const DefaultTextField(
+          hintText: "Password...",
+          obscureText: true,
+        ),
+        const DefaultTextField(
+          hintText: "Repeat Password...",
+          obscureText: true,
+        ),
+        Votebutton(
+          onClick: () {
+            Provider.of<UserAuth>(context, listen: false).loggedIn = true;
+            context.pop();
+          },
+          text: "Login",
+        )
+      ],
     );
   }
 }

@@ -15,9 +15,11 @@ class StatementMoreOptions extends StatelessWidget {
         ),
         Row(
           children: [
-            const Votebutton.up(),
+            Votebutton.up(
+              onClick: () {},
+            ),
             AddButton(onPressed: () => {}),
-            const Votebutton.down(),
+            Votebutton.down(onClick: () {}),
           ],
         )
       ],

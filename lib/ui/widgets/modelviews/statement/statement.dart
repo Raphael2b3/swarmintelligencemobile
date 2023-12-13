@@ -19,13 +19,14 @@ class Statement extends StatelessWidget {
         const TagList(tags: ["tag", "tag2"]),
         Container(
           margin: const EdgeInsets.only(top: 30),
-          child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Votebutton.up(),
-                AddButton(onPressed: () => {}),
-                const Votebutton.down()
-              ]),
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Votebutton.up(
+              onClick: () {},
+            ),
+            AddButton(onPressed: () => {}),
+            Votebutton.down(onClick: () {})
+          ]),
         )
       ],
     );

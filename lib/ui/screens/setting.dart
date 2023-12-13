@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swarmintelligencemobile/ui/widgets/inputs/authorization_button.dart';
 import 'package:swarmintelligencemobile/ui/widgets/modelviews/userinformation.dart';
 
 class SettingPage extends StatelessWidget {
@@ -9,8 +10,7 @@ class SettingPage extends StatelessWidget {
     return const Column(
       children: [
         UserInformations(),
-        Text("data"),
-        Text("data"),
+        AuthorizationButton(),
       ],
     );
   }
