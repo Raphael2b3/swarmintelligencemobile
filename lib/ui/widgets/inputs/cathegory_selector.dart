@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:swarmintelligencemobile/constants/styles.dart';
 
-class Cathegoryselector extends StatefulWidget {
+class CathegorySelector extends StatefulWidget {
   final List<String> cathegories;
   final Widget extraWidget;
-  const Cathegoryselector(
+
+  const CathegorySelector(
       {super.key,
       required this.cathegories,
       this.extraWidget = const SizedBox.shrink()});
 
   @override
-  State<Cathegoryselector> createState() => _CathegoryselectorState();
+  State<CathegorySelector> createState() => _CathegoryselectorState();
 }
 
-class _CathegoryselectorState extends State<Cathegoryselector> {
+class _CathegoryselectorState extends State<CathegorySelector> {
   int index = 0;
 
   void changeIndex(i) {
