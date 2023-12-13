@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class SettingCircle extends StatefulWidget {
+class SettingCircle extends StatelessWidget {
   const SettingCircle({super.key});
 
-  @override
-  State<SettingCircle> createState() => _SettingCircleState();
-}
-
-class _SettingCircleState extends State<SettingCircle> {
   final double height = 50;
+
   @override
   Widget build(BuildContext context) {
     return Container(

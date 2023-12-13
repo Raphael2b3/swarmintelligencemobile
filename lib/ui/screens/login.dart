@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/ui/widgets/default_textfield.dart';
+import 'package:swarmintelligencemobile/ui/widgets/inputs/default_textfield.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Container(

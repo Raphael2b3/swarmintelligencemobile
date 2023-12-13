@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 
-class AddButton extends StatefulWidget {
+class AddButton extends StatelessWidget {
   final void Function() onPressed;
   const AddButton({super.key, required this.onPressed});
 
-  @override
-  State<AddButton> createState() => AddButtonState();
-}
-
-class AddButtonState extends State<AddButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +13,7 @@ class AddButtonState extends State<AddButton> {
           borderRadius: BorderRadius.circular(25), color: Colors.grey),
       child: IconButton(
         icon: const Icon(Icons.add),
-        onPressed: widget.onPressed,
+        onPressed: onPressed,
       ),
     );
   }

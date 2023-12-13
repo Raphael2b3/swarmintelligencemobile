@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:swarmintelligencemobile/ui/screens/history.dart';
 import 'package:swarmintelligencemobile/ui/screens/home.dart';
-import 'package:swarmintelligencemobile/ui/screens/pages/history.dart';
-import 'package:swarmintelligencemobile/ui/screens/pages/login.dart';
-import 'package:swarmintelligencemobile/ui/screens/pages/register.dart';
-import 'package:swarmintelligencemobile/ui/screens/pages/search.dart';
-import 'package:swarmintelligencemobile/ui/screens/pages/setting.dart';
+import 'package:swarmintelligencemobile/ui/screens/login.dart';
+import 'package:swarmintelligencemobile/ui/screens/register.dart';
+import 'package:swarmintelligencemobile/ui/screens/search.dart';
+import 'package:swarmintelligencemobile/ui/screens/setting.dart';
 
 class SwarmIntelligenceMobileApp extends StatelessWidget {
   const SwarmIntelligenceMobileApp({super.key});
@@ -28,8 +28,7 @@ class SwarmIntelligenceMobileApp extends StatelessWidget {
 
 final _routes = GoRouter(initialLocation: "/history", routes: [
   StatefulShellRoute.indexedStack(
-      builder: (context, state, child) =>
-          Home(cIndex: child.currentIndex, child: child),
+      builder: (context, state, child) => Home(navShell: child),
       branches: [
         StatefulShellBranch(routes: [
           GoRoute(

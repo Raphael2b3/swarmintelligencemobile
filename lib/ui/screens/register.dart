@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
 
-class RegisterPage extends StatefulWidget {
+class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
-
-  @override
-  State<RegisterPage> createState() => _RegisterPageState();
-}
-
-class _RegisterPageState extends State<RegisterPage> {
-  void onFilterChange(int state) {}
-
-  void onSearch(String query) {}
 
   @override
   Widget build(BuildContext context) {

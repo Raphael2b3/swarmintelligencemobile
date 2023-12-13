@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:swarmintelligencemobile/constants/styles.dart';
 
-class ReloadButton extends StatefulWidget {
+class ReloadButton extends StatelessWidget {
   const ReloadButton({super.key});
 
-  @override
-  State<ReloadButton> createState() => _ReloadButtonState();
-}
-
-class _ReloadButtonState extends State<ReloadButton> {
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,13 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:swarmintelligencemobile/ui/widgets/statement/statement.dart';
+import 'package:swarmintelligencemobile/ui/widgets/modelviews/statement/statement.dart';
 
-class ContentList extends StatefulWidget {
+class ContentList extends StatelessWidget {
   const ContentList({super.key});
-  @override
-  State<ContentList> createState() => _ContentListState();
-}
-
-class _ContentListState extends State<ContentList> {
   @override
   Widget build(BuildContext context) {
     return Expanded(

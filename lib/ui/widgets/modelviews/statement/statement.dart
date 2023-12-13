@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/ui/widgets/buttons/addbutton.dart';
-import 'package:swarmintelligencemobile/ui/widgets/buttons/votebutton.dart';
-import 'package:swarmintelligencemobile/ui/widgets/default_card.dart';
-import 'package:swarmintelligencemobile/ui/widgets/taglist.dart';
+import 'package:swarmintelligencemobile/ui/widgets/inputs/buttons/addbutton.dart';
+import 'package:swarmintelligencemobile/ui/widgets/inputs/buttons/votebutton.dart';
+import 'package:swarmintelligencemobile/ui/widgets/primitives/default_card.dart';
+import 'package:swarmintelligencemobile/ui/widgets/primitives/taglist.dart';
 
-class Statement extends StatefulWidget {
+class Statement extends StatelessWidget {
   final String text;
 
   const Statement({super.key, this.text = "Geiler scheiß"});
 
   @override
-  State<Statement> createState() => _StatementState();
-}
-
-class _StatementState extends State<Statement> {
-  @override
   Widget build(BuildContext context) {
     return DefaultCard(
       children: [
         Text(
-          widget.text,
+          text,
         ),
         const TagList(tags: ["tag", "tag2"]),
         Container(

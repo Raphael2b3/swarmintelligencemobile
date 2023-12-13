@@ -2,15 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:swarmintelligencemobile/constants/styles.dart';
 
-class DefaultTextField extends StatefulWidget {
+class DefaultTextField extends StatelessWidget {
   final void Function() onClick;
   const DefaultTextField({super.key, required this.onClick});
 
-  @override
-  State<DefaultTextField> createState() => _DefaultTextFieldState();
-}
-
-class _DefaultTextFieldState extends State<DefaultTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,7 +25,7 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
         ),
         decoration: InputDecoration(
             suffixIcon: IconButton(
-                onPressed: widget.onClick,
+                onPressed: onClick,
                 icon: const Icon(
                   Icons.clear,
                 )),
