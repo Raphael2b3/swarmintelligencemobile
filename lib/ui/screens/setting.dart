@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/ui/widgets/inputs/authorization_button.dart';
+import 'package:swarmintelligencemobile/ui/widgets/inputs/buttons/authorization_button.dart';
 import 'package:swarmintelligencemobile/ui/widgets/modelviews/userinformation.dart';
 
 class SettingPage extends StatelessWidget {
