@@ -49,7 +49,7 @@ final _routes = GoRouter(initialLocation: "/history", routes: [
               routes: [
                 GoRoute(
                   path: "login",
-                  builder: (context, state) => const LoginPage(),
+                  builder: (context, state) => LoginPage(),
                 ),
                 GoRoute(
                   path: "register",

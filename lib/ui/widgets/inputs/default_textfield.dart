@@ -4,13 +4,18 @@ import 'package:swarmintelligencemobile/constants/styles.dart';
 class DefaultTextField extends StatelessWidget {
   final String hintText;
   final bool obscureText;
-  const DefaultTextField(
-      {super.key, required this.hintText, this.obscureText = false});
+
+  final TextEditingController controller;
+
+  DefaultTextField({
+    super.key,
+    TextEditingController? controller,
+    required this.hintText,
+    this.obscureText = false,
+  }) : controller = controller ?? TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController controller = TextEditingController();
-
     return Container(
       padding: const EdgeInsets.only(
         right: 45,

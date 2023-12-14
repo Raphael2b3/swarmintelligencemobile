@@ -13,14 +13,14 @@ class Searchbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Stack(
+    return Stack(
       clipBehavior: Clip.none,
       alignment: Alignment.centerRight,
       children: [
         DefaultTextField(
           hintText: "Search...",
         ),
-        SettingCircle()
+        const SettingCircle()
       ],
     );
   }
