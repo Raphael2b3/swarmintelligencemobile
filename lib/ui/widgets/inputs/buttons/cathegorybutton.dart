@@ -8,15 +8,13 @@ class CathegoryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 60,
+      margin: const EdgeInsets.only(bottom: 5),
       width: double.infinity,
       child: Material(
-        shape: const Border(
-            bottom: BorderSide(
-          color: Colors.grey,
-          style: BorderStyle.solid,
-        )),
+        clipBehavior: Clip.hardEdge,
+        borderRadius: BorderRadius.circular(10),
         color: AppColors.highlightdark,
         child: InkWell(
           splashColor: Colors.grey.shade700,
@@ -24,6 +22,11 @@ class CathegoryButton extends StatelessWidget {
             onClick();
           },
           child: Container(
+            decoration: const BoxDecoration(
+              border: Border(
+                bottom: BorderSide(color: Colors.grey),
+              ),
+            ),
             alignment: Alignment.centerLeft,
             padding: const EdgeInsets.only(left: 10),
             child: Text(text, style: const TextStyle(fontSize: 20)),
