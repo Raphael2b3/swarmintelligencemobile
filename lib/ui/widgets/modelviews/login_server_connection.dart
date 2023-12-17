@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
-import 'package:swarmintelligencemobile/states/userauth.dart';
 import 'package:swarmintelligencemobile/ui/widgets/inputs/buttons/votebutton.dart';
 import 'package:swarmintelligencemobile/ui/widgets/inputs/default_textfield.dart';
 import 'package:swarmintelligencemobile/ui/widgets/primitives/default_card.dart';
 
-class ServerConnection extends StatelessWidget {
-  ServerConnection({super.key});
+class LoginServerConnection extends StatelessWidget {
+  LoginServerConnection({super.key});
 
   final TextEditingController ip = TextEditingController();
 
@@ -40,13 +38,8 @@ class ServerConnection extends StatelessWidget {
           hintText: "Password...",
           obscureText: true,
         ),
-        DefaultTextField(
-          hintText: "Repeat Password...",
-          obscureText: true,
-        ),
         Votebutton(
           onClick: () {
-            Provider.of<UserAuth>(context, listen: false).loggedIn = true;
             context.pop();
           },
           text: "Login",

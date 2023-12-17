@@ -13,11 +13,9 @@ class CathegoryButton extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 5),
       width: double.infinity,
       child: Material(
-        clipBehavior: Clip.hardEdge,
-        borderRadius: BorderRadius.circular(10),
-        color: AppColors.highlightdark,
+        color: AppColors.backgroundark,
         child: InkWell(
-          splashColor: Colors.grey.shade700,
+          splashColor: AppColors.highlightdark,
           onTap: () {
             onClick();
           },

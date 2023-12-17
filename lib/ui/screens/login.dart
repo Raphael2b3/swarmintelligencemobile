@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swarmintelligencemobile/ui/widgets/modelviews/login_server_connection.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -11,7 +12,9 @@ class LoginPage extends StatelessWidget {
           "Login",
           style: TextStyle(fontSize: 20),
         ),
-        ListView()
+        Column(
+          children: [LoginServerConnection()],
+        )
       ],
     );
   }

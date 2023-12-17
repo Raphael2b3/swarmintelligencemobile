@@ -1,14 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/ui/widgets/inputs/buttons/authorization_button.dart';
-import 'package:swarmintelligencemobile/ui/widgets/modelviews/userinformation.dart';
+import 'package:provider/provider.dart';
+import 'package:swarmintelligencemobile/states/server_list.dart';
+import 'package:swarmintelligencemobile/ui/widgets/inputs/buttons/addbutton.dart';
+import 'package:swarmintelligencemobile/ui/widgets/modelviews/server/server_card.dart';
+import 'package:swarmintelligencemobile/ui/widgets/primitives/cathegory.dart';
+import 'package:swarmintelligencemobile/ui/widgets/primitives/sub_card.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [UserInformations(), AuthorizationButton()],
+    var serverlist = ServerList();
+
+    return ChangeNotifierProvider.value(
+      value: serverlist,
+      child: Column(
+        children: [
+          Text(serverlist.servers.length.toString()),
+          CathegoryCard(
+              title: "Server",
+              contents: serverlist.servers
+                      .map<Widget>((e) => ServerCard(server: e))
+                      .toList() +
+                  [AddButton(onPressed: () {})]),
+        ],
+      ),
     );
   }
 }
