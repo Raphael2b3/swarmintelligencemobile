@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:swarmintelligencemobile/models/app.dart';
 import 'package:swarmintelligencemobile/states/active_server.dart';
-import 'package:swarmintelligencemobile/ui/widgets/inputs/buttons/clickable_card.dart';
 import 'package:swarmintelligencemobile/ui/widgets/inputs/buttons/votebutton.dart';
 import 'package:swarmintelligencemobile/ui/widgets/inputs/expandable_card.dart';
 
