@@ -13,10 +13,10 @@ class ServerList extends ChangeNotifier {
   ];
 
   void sortServer(String url) {
-    int i = 0;
+    int i = -1;
     for (var server in servers) {
-      if (server.name == url) break;
       i++;
+      if (server.name == url) break;
     }
     var server = servers.removeAt(i);
     servers.insert(0, server);

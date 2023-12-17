@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +28,7 @@ class _ServerCardState extends State<ServerCard> {
   Timer? timer;
   void setOnline() {
     setState(() {
-      online = !online;
+      online = Random().nextBool();
     });
   }
 
@@ -35,7 +36,7 @@ class _ServerCardState extends State<ServerCard> {
   void initState() {
     super.initState();
     timer =
-        Timer.periodic(const Duration(seconds: 1), (Timer t) => setOnline());
+        Timer.periodic(const Duration(seconds: 5), (Timer t) => setOnline());
   }
 
   @override

@@ -5,14 +5,9 @@ import 'package:swarmintelligencemobile/states/server_list.dart';
 import 'package:swarmintelligencemobile/ui/widgets/modelviews/server/server_card.dart';
 import 'package:swarmintelligencemobile/ui/widgets/primitives/cathegory.dart';
 
-class SettingPage extends StatefulWidget {
-  const SettingPage({super.key});
+class SettingPage extends StatelessWidget {
+  SettingPage({super.key});
 
-  @override
-  State<SettingPage> createState() => _SettingPageState();
-}
-
-class _SettingPageState extends State<SettingPage> {
   final serverlist = ServerList();
 
   @override
@@ -29,7 +24,7 @@ class _SettingPageState extends State<SettingPage> {
               title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text("Server"),
+                    Text("Server [${activeServer.active?.name ?? ""}]"),
                     IconButton(onPressed: () {}, icon: const Icon(Icons.add))
                   ]),
               contents: serverlist.servers

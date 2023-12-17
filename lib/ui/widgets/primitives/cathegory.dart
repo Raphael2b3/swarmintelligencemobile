@@ -12,20 +12,6 @@ class CathegoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpandableCard(
-        child: title, hiddenchild: Column(children: contents));
-
-    return Column(
-      children: [
-        DefaultCard(child: title),
-        SubCard(
-            children: contents +
-                [
-                  ClickableCard(
-                    child: const SizedBox.shrink(),
-                    onClick: () {},
-                  )
-                ])
-      ],
-    );
+        hiddenchild: Column(children: contents), child: title);
   }
 }

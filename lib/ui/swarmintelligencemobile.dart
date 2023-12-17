@@ -45,7 +45,7 @@ final _routes = GoRouter(initialLocation: "/history", routes: [
         StatefulShellBranch(routes: [
           GoRoute(
               path: "/settings",
-              builder: (context, state) => const SettingPage(),
+              builder: (context, state) => SettingPage(),
               routes: [
                 GoRoute(
                   path: "login",
