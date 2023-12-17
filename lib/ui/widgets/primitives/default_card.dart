@@ -1,8 +1,16 @@
 import 'package:flutter/cupertino.dart';
 
 class DefaultCard extends StatelessWidget {
-  final List<Widget> children;
-  const DefaultCard({super.key, required this.children});
+  final Widget child;
+  const DefaultCard({super.key, required this.child});
+
+  factory DefaultCard.coloumn({key, required List<Widget> children}) {
+    return DefaultCard(key: key, child: Column(children: children));
+  }
+
+  factory DefaultCard.row({key, required List<Widget> children}) {
+    return DefaultCard(key: key, child: Row(children: children));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +22,7 @@ class DefaultCard extends StatelessWidget {
         color: const Color.fromRGBO(37, 37, 37, 1),
         borderRadius: BorderRadius.circular(10),
       ),
-      child:
-          Column(mainAxisAlignment: MainAxisAlignment.end, children: children),
+      child: child,
     );
   }
 }

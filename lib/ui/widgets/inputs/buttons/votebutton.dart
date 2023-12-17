@@ -21,7 +21,6 @@ class Votebutton extends StatelessWidget {
           color: color,
           child: InkWell(
             borderRadius: BorderRadius.circular(10),
-            splashColor: Colors.white,
             highlightColor: Colors.white,
             onTap: onClick,
             child: Container(

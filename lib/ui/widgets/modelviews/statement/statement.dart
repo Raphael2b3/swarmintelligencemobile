@@ -11,7 +11,7 @@ class Statement extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultCard(
+    return DefaultCard.coloumn(
       children: [
         Text(
           text,

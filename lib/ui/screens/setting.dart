@@ -19,11 +19,18 @@ class SettingPage extends StatelessWidget {
         children: [
           Text(serverlist.servers.length.toString()),
           CathegoryCard(
-              title: "Server",
+              title: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Server"),
+                    IconButton(onPressed: () {}, icon: Icon(Icons.add))
+                  ]),
               contents: serverlist.servers
-                      .map<Widget>((e) => ServerCard(server: e))
-                      .toList() +
-                  [AddButton(onPressed: () {})]),
+                  .map<Widget>((e) => ServerCard(
+                        server: e,
+                        onActivateChange: (_, __) {},
+                      ))
+                  .toList()),
         ],
       ),
     );

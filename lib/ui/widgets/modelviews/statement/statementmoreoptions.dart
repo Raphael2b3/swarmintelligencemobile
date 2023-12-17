@@ -8,7 +8,7 @@ class StatementMoreOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultCard(
+    return DefaultCard.coloumn(
       children: [
         const Text(
           "widget.text",
