@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/constants/styles.dart';
 
 class ClickableText extends StatelessWidget {
   final String text;

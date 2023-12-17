@@ -10,7 +10,7 @@ class AddButton extends StatelessWidget {
       height: 50,
       width: 50,
       decoration: BoxDecoration(
-          boxShadow: [BoxShadow(color: Colors.black, blurRadius: 7)],
+          boxShadow: const [BoxShadow(color: Colors.black, blurRadius: 7)],
           borderRadius: BorderRadius.circular(25),
           color: Colors.grey),
       child: IconButton(
