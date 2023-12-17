@@ -17,11 +17,13 @@ class Votebutton extends StatelessWidget {
       height: 40,
       width: 100,
       child: Material(
+          shadowColor: Colors.black,
+          elevation: 6,
           borderRadius: BorderRadius.circular(10),
           color: color,
           child: InkWell(
             borderRadius: BorderRadius.circular(10),
-            highlightColor: Colors.white,
+            splashColor: Colors.grey.shade400,
             onTap: onClick,
             child: Container(
               alignment: Alignment.center,

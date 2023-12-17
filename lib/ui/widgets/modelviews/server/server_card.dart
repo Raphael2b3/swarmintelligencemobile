@@ -1,18 +1,20 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:swarmintelligencemobile/models/app.dart';
+import 'package:swarmintelligencemobile/states/active_server.dart';
 import 'package:swarmintelligencemobile/ui/widgets/inputs/buttons/clickable_card.dart';
 import 'package:swarmintelligencemobile/ui/widgets/inputs/buttons/votebutton.dart';
-import 'package:swarmintelligencemobile/ui/widgets/primitives/default_card.dart';
+import 'package:swarmintelligencemobile/ui/widgets/inputs/expandable_card.dart';
 
 class ServerCard extends StatefulWidget {
   final Server server;
 
   final bool active;
-  final void Function(int index, bool value) onActivateChange;
   const ServerCard({
     super.key,
     required this.server,
-    required this.onActivateChange,
     this.active = false,
   });
 
@@ -21,22 +23,32 @@ class ServerCard extends StatefulWidget {
 }
 
 class _ServerCardState extends State<ServerCard> {
-  late bool active;
-  void setActive() {
+  bool online = false;
+  Timer? timer;
+  void setOnline() {
     setState(() {
-      active = !active;
+      online = !online;
     });
   }
 
   @override
   void initState() {
     super.initState();
-    active = widget.active;
+    timer =
+        Timer.periodic(const Duration(seconds: 1), (Timer t) => setOnline());
+  }
+
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return ClickableCard(
+    var activeServer = Provider.of<ActiveServer>(context);
+    return ExpandableCard(
+      hiddenchild: const Placeholder(),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -46,7 +58,7 @@ class _ServerCardState extends State<ServerCard> {
                 height: 10,
                 width: 10,
                 decoration: BoxDecoration(
-                  color: Colors.green,
+                  color: online ? Colors.lightGreen : Colors.grey.shade800,
                   borderRadius: BorderRadius.circular(5),
                 ),
                 margin: const EdgeInsets.only(right: 7),
@@ -54,12 +66,13 @@ class _ServerCardState extends State<ServerCard> {
               Text("${widget.active ? "(Active) " : ""}${widget.server.name}"),
             ],
           ),
-          active
-              ? Votebutton.down(onClick: setActive, text: "Deactivate")
-              : Votebutton.up(
-                  onClick: setActive,
-                  text: "Activate",
-                )
+          if (!widget.active)
+            Votebutton.up(
+              onClick: () {
+                activeServer.active = widget.server;
+              },
+              text: "Activate",
+            )
         ],
       ),
     );

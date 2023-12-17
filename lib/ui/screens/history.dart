@@ -7,7 +7,7 @@ class HistoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(13),
-      child: Column(
+      child: const Column(
         children: [
           Text("data"),
           Text("data"),

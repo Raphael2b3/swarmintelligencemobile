@@ -15,6 +15,9 @@ class Server extends ChangeNotifier {
   String? name;
   Auth? auth;
   History? history;
+
+  @override
+  String toString() => "Server $name";
 }
 
 class Auth extends ChangeNotifier {

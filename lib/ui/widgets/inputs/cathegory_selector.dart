@@ -5,7 +5,7 @@ class CathegorySelector extends StatefulWidget {
   final List<String> cathegories;
   final Widget extraWidget;
 
-  CathegorySelector(
+  const CathegorySelector(
       {super.key,
       required this.cathegories,
       this.extraWidget = const SizedBox.shrink()});

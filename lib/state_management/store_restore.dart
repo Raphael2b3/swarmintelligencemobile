@@ -1,5 +1,5 @@
 import 'package:swarmintelligencemobile/models/app.dart';
 
-Server get_default_ServerConnection() {
+Server getDefaultServerConnection() {
   return Server(auth: null);
 }

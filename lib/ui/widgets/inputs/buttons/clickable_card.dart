@@ -1,26 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/ui/widgets/primitives/default_card.dart';
 
 class ClickableCard extends StatelessWidget {
   final Widget child;
-  const ClickableCard({super.key, required this.child});
-  factory ClickableCard.coloumn({key, required List<Widget> children}) {
-    return ClickableCard(key: key, child: Column(children: children));
+  final void Function() onClick;
+
+  const ClickableCard({super.key, required this.child, required this.onClick});
+
+  factory ClickableCard.coloumn(
+      {key, required List<Widget> children, required onClick}) {
+    return ClickableCard(
+        key: key, onClick: onClick, child: Column(children: children));
   }
 
-  factory ClickableCard.row({key, required List<Widget> children}) {
-    return ClickableCard(key: key, child: Row(children: children));
-  }
+  factory ClickableCard.row(
+          {key, required List<Widget> children, required onClick}) =>
+      ClickableCard(key: key, onClick: onClick, child: Row(children: children));
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(5),
+      margin: const EdgeInsets.only(top: 10),
       child: Material(
+        elevation: 6,
+        shadowColor: Colors.black,
         color: const Color.fromRGBO(37, 37, 37, 1),
         borderRadius: BorderRadius.circular(10),
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
-          onTap: () {},
+          onTap: onClick,
           child: Container(
             padding: const EdgeInsets.all(13),
             child: child,

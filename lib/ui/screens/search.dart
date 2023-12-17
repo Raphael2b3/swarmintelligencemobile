@@ -10,14 +10,14 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
-        const Searchbar(),
+        Searchbar(),
         CathegorySelector(
           cathegories: Settings.cathegories,
-          extraWidget: const ReloadButton(),
+          extraWidget: ReloadButton(),
         ),
-        const ContentList()
+        ContentList()
       ],
     );
   }

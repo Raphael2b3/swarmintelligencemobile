@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:swarmintelligencemobile/constants/styles.dart';
 import 'package:swarmintelligencemobile/models/app.dart';
 import 'package:swarmintelligencemobile/states/active_server.dart';
-import 'package:swarmintelligencemobile/states/userauth.dart';
 
 class Home extends StatelessWidget {
   final StatefulNavigationShell navShell;
