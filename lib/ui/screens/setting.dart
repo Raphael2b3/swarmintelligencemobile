@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:swarmintelligencemobile/states/active_server.dart';
 import 'package:swarmintelligencemobile/states/server_list.dart';
@@ -25,7 +26,11 @@ class SettingPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Server [${activeServer.active?.name ?? ""}]"),
-                    IconButton(onPressed: () {}, icon: const Icon(Icons.add))
+                    IconButton(
+                        onPressed: () {
+                          context.push("/settings/addserver");
+                        },
+                        icon: const Icon(Icons.add))
                   ]),
               contents: serverlist.servers
                   .map<Widget>((e) => ServerCard(

@@ -32,7 +32,7 @@ class _CathegoryselectorState extends State<CathegorySelector> {
       children: [
         Expanded(
           child: Container(
-            color: Colors.white,
+            color: AppColors.primaryText,
             height: 2,
           ),
         ),
@@ -74,7 +74,7 @@ class _CathegoryselectorState extends State<CathegorySelector> {
             children: [
               Expanded(
                 child: Container(
-                  color: Colors.white,
+                  color: AppColors.primaryText,
                   height: 2,
                 ),
               ),

@@ -46,10 +46,10 @@ class Home extends StatelessWidget {
         bottomNavigationBar: BottomNavigationBar(
           onTap: changeTab,
           currentIndex: navShell.currentIndex,
-          backgroundColor: const Color(0x00000000),
+          backgroundColor: Colors.transparent,
           items: items,
-          unselectedItemColor: Colors.blueGrey,
-          selectedItemColor: const Color.fromARGB(255, 255, 255, 255),
+          unselectedItemColor: AppColors.secondary,
+          selectedItemColor: AppColors.primaryText,
         ),
       ),
     );

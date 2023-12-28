@@ -48,7 +48,10 @@ class _ServerCardState extends State<ServerCard> {
   Widget build(BuildContext context) {
     var activeServer = Provider.of<ActiveServer>(context);
     return ExpandableCard(
-      hiddenchild: const Placeholder(),
+      hiddenchild: Column(children: [
+        Votebutton(onClick: () {}, text: "Delete"),
+        Votebutton(onClick: () {}, text: "Edit"),
+      ]),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

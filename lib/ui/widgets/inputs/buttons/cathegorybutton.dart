@@ -22,7 +22,7 @@ class CathegoryButton extends StatelessWidget {
           child: Container(
             decoration: const BoxDecoration(
               border: Border(
-                bottom: BorderSide(color: Colors.grey),
+                bottom: BorderSide(color: AppColors.secondary),
               ),
             ),
             alignment: Alignment.centerLeft,

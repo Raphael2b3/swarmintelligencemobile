@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
+import 'package:swarmintelligencemobile/constants/styles.dart';
 import 'package:swarmintelligencemobile/ui/screens/history.dart';
 import 'package:swarmintelligencemobile/ui/screens/home.dart';
-import 'package:swarmintelligencemobile/ui/screens/login.dart';
-import 'package:swarmintelligencemobile/ui/screens/register.dart';
+import 'package:swarmintelligencemobile/ui/screens/add_server.dart';
 import 'package:swarmintelligencemobile/ui/screens/search.dart';
 import 'package:swarmintelligencemobile/ui/screens/setting.dart';
 
@@ -12,13 +13,19 @@ class SwarmIntelligenceMobileApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Brightness.dark,
+      statusBarIconBrightness: Brightness.dark,
+      systemNavigationBarColor: AppColors.black,
+    ));
     return SafeArea(
       child: MaterialApp.router(
         title: "Swarmintelligence Mobile",
         routerConfig: _routes,
         theme: ThemeData(
           textTheme: const TextTheme(
-            bodyMedium: TextStyle(color: Colors.white, fontSize: 14),
+            bodyMedium: TextStyle(color: AppColors.primaryText, fontSize: 14),
           ),
         ),
       ),
@@ -48,13 +55,9 @@ final _routes = GoRouter(initialLocation: "/history", routes: [
               builder: (context, state) => SettingPage(),
               routes: [
                 GoRoute(
-                  path: "login",
-                  builder: (context, state) => const LoginPage(),
+                  path: "addserver",
+                  builder: (context, state) => const AddServerPage(),
                 ),
-                GoRoute(
-                  path: "register",
-                  builder: (context, state) => const RegisterPage(),
-                )
               ])
         ])
       ])
