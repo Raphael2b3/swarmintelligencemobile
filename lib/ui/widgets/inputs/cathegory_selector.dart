@@ -48,8 +48,9 @@ class _CathegoryselectorState extends State<CathegorySelector> {
               IconButton(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(0),
+                color: AppColors.secondary,
                 onPressed: () => {changeIndex(index + 1)},
-                icon: const Icon(Icons.arrow_right),
+                icon: const Icon(Icons.arrow_left),
               ),
               Container(
                 constraints: const BoxConstraints(minWidth: 100),
@@ -61,9 +62,10 @@ class _CathegoryselectorState extends State<CathegorySelector> {
               IconButton(
                   alignment: Alignment.center,
                   padding: const EdgeInsets.all(0),
+                  color: AppColors.secondary,
                   onPressed: () => {changeIndex(index - 1)},
                   icon: const Icon(
-                    Icons.arrow_left,
+                    Icons.arrow_right,
                   )),
             ],
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swarmintelligencemobile/constants/styles.dart';
 
 class Votebutton extends StatelessWidget {
   final Color? color;
@@ -27,7 +28,8 @@ class Votebutton extends StatelessWidget {
             onTap: onClick,
             child: Container(
               alignment: Alignment.center,
-              child: Text(text, style: const TextStyle(color: Colors.black)),
+              child: Text(text,
+                  style: const TextStyle(color: AppColors.primaryText)),
             ),
           )),
     );
@@ -35,13 +37,13 @@ class Votebutton extends StatelessWidget {
 
   const Votebutton.up(
       {super.key,
-      this.color = Colors.greenAccent,
+      this.color = AppColors.green,
       this.text = "True",
       required this.onClick});
 
   const Votebutton.down(
       {super.key,
-      this.color = Colors.redAccent,
+      this.color = AppColors.red,
       this.text = "False",
       required this.onClick});
 }
