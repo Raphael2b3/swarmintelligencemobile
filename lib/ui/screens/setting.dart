@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:swarmintelligencemobile/states/active_server.dart';
 import 'package:swarmintelligencemobile/states/server_list.dart';
+import 'package:swarmintelligencemobile/ui/widgets/inputs/buttons/addbutton.dart';
 import 'package:swarmintelligencemobile/ui/widgets/modelviews/server/server_card.dart';
 import 'package:swarmintelligencemobile/ui/widgets/primitives/cathegory.dart';
 
@@ -26,11 +27,9 @@ class SettingPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Server [${activeServer.active?.name ?? ""}]"),
-                    IconButton(
-                        onPressed: () {
-                          context.push("/settings/addserver");
-                        },
-                        icon: const Icon(Icons.add))
+                    AddButton(onPressed: () {
+                      context.push("/settings/addserver");
+                    })
                   ]),
               contents: serverlist.servers
                   .map<Widget>((e) => ServerCard(

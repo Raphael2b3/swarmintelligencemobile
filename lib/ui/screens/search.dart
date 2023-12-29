@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:swarmintelligencemobile/ui/widgets/primitives/content_list.dart';
 import 'package:swarmintelligencemobile/ui/widgets/inputs/cathegory_selector.dart';
-import 'package:swarmintelligencemobile/ui/widgets/inputs/buttons/reloadbutton.dart';
 import 'package:swarmintelligencemobile/ui/widgets/inputs/searchbar.dart';
 import 'package:swarmintelligencemobile/constants/settings.dart';
 
@@ -15,7 +14,6 @@ class SearchPage extends StatelessWidget {
         Searchbar(),
         CathegorySelector(
           cathegories: Settings.cathegories,
-          extraWidget: ReloadButton(),
         ),
         ContentList()
       ],

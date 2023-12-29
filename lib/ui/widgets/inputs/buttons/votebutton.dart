@@ -8,7 +8,7 @@ class Votebutton extends StatelessWidget {
 
   const Votebutton(
       {super.key,
-      this.color = Colors.grey,
+      this.color = AppColors.secondary,
       this.text = "",
       required this.onClick});
 
@@ -24,12 +24,10 @@ class Votebutton extends StatelessWidget {
           color: color,
           child: InkWell(
             borderRadius: BorderRadius.circular(10),
-            splashColor: Colors.grey.shade400,
             onTap: onClick,
             child: Container(
               alignment: Alignment.center,
-              child: Text(text,
-                  style: const TextStyle(color: AppColors.primaryText)),
+              child: Text(text),
             ),
           )),
     );

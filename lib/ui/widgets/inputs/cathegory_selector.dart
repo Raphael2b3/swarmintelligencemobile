@@ -3,12 +3,11 @@ import 'package:swarmintelligencemobile/constants/styles.dart';
 
 class CathegorySelector extends StatefulWidget {
   final List<String> cathegories;
-  final Widget extraWidget;
 
-  const CathegorySelector(
-      {super.key,
-      required this.cathegories,
-      this.extraWidget = const SizedBox.shrink()});
+  const CathegorySelector({
+    super.key,
+    required this.cathegories,
+  });
 
   @override
   State<CathegorySelector> createState() => _CathegoryselectorState();
@@ -32,7 +31,7 @@ class _CathegoryselectorState extends State<CathegorySelector> {
       children: [
         Expanded(
           child: Container(
-            color: AppColors.primaryText,
+            color: AppColors.secondary,
             height: 2,
           ),
         ),
@@ -76,11 +75,10 @@ class _CathegoryselectorState extends State<CathegorySelector> {
             children: [
               Expanded(
                 child: Container(
-                  color: AppColors.primaryText,
+                  color: AppColors.secondary,
                   height: 2,
                 ),
               ),
-              widget.extraWidget
             ],
           ),
         ),

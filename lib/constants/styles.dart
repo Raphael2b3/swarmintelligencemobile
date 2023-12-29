@@ -3,9 +3,9 @@ import 'dart:ui';
 class AppColors {
   static const Color black = Color(0xFF000000);
 
-  static const Color red = Color.fromARGB(255, 161, 24, 24);
+  static const Color red = Color.fromARGB(255, 158, 50, 50);
 
-  static const Color green = Color.fromARGB(255, 26, 151, 15);
+  static const Color green = Color.fromARGB(255, 55, 126, 48);
 
   static const Color highlightdark = Color.fromRGBO(37, 37, 37, 1);
 
