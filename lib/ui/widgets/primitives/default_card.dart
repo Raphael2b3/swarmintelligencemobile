@@ -4,14 +4,6 @@ class DefaultCard extends StatelessWidget {
   final Widget child;
   const DefaultCard({super.key, required this.child});
 
-  factory DefaultCard.coloumn({key, required List<Widget> children}) {
-    return DefaultCard(key: key, child: Column(children: children));
-  }
-
-  factory DefaultCard.row({key, required List<Widget> children}) {
-    return DefaultCard(key: key, child: Row(children: children));
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(

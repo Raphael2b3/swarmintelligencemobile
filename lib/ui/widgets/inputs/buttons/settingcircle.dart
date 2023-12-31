@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:swarmintelligencemobile/constants/styles.dart';
 
 class SettingCircle extends StatelessWidget {
   const SettingCircle({super.key});
@@ -12,7 +13,7 @@ class SettingCircle extends StatelessWidget {
       height: height,
       width: height,
       decoration: BoxDecoration(
-          color: Colors.blue, borderRadius: BorderRadius.circular(40)),
+          color: AppColors.secondary, borderRadius: BorderRadius.circular(40)),
       child: Material(
         color: Colors.transparent,
         child: InkWell(

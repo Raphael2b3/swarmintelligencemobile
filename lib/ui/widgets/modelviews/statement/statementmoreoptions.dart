@@ -8,7 +8,8 @@ class StatementMoreOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultCard.coloumn(
+    return DefaultCard(
+        child: Column(
       children: [
         const Text(
           "widget.text",
@@ -23,6 +24,6 @@ class StatementMoreOptions extends StatelessWidget {
           ],
         )
       ],
-    );
+    ));
   }
 }

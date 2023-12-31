@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swarmintelligencemobile/constants/styles.dart';
 import 'package:swarmintelligencemobile/ui/widgets/modelviews/login_server_connection.dart';
 
 class AddServerPage extends StatelessWidget {
@@ -8,9 +9,9 @@ class AddServerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
+        Text(
           "Add Server",
-          style: TextStyle(fontSize: 20),
+          style: TextStyles.highlighted,
         ),
         Column(
           children: [LoginServerConnection()],

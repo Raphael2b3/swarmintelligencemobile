@@ -7,10 +7,20 @@ class AddButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      color: AppColors.primaryText,
-      icon: const Icon(Icons.add),
-      onPressed: onPressed,
+    return Container(
+      height: 40,
+      width: 40,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: AppColors.highlightdark,
+        borderRadius: BorderRadius.circular(40),
+      ),
+      child: IconButton(
+        alignment: Alignment.center,
+        color: AppColors.primaryText,
+        icon: const Icon(Icons.add, color: AppColors.primaryText),
+        onPressed: onPressed,
+      ),
     );
   }
 }

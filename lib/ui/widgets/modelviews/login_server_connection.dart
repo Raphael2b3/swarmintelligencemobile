@@ -20,7 +20,8 @@ class LoginServerConnection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultCard.coloumn(
+    return DefaultCard(
+        child: Column(
       children: [
         DefaultTextField(
           hintText: "Server name... [You decide]",
@@ -45,6 +46,6 @@ class LoginServerConnection extends StatelessWidget {
           text: "Login",
         ),
       ],
-    );
+    ));
   }
 }

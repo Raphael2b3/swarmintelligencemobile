@@ -57,7 +57,7 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
                       color: AppColors.primaryText,
                     ))
                 : null,
-            hintStyle: const TextStyle(color: AppColors.secondary),
+            hintStyle: TextStyles.hintText,
             hintText: widget.hintText,
             contentPadding: const EdgeInsets.only(left: 13),
             border: const OutlineInputBorder(borderSide: BorderSide.none)),

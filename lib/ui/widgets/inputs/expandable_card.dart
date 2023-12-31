@@ -22,8 +22,9 @@ class _ExpandableCardState extends State<ExpandableCard> {
 
   @override
   Widget build(BuildContext context) {
-    return ClickableCard.coloumn(
+    return ClickableCard(
         onClick: expand,
-        children: [widget.child, if (expanded) widget.hiddenchild]);
+        child:
+            Column(children: [widget.child, if (expanded) widget.hiddenchild]));
   }
 }

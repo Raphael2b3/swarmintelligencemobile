@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:swarmintelligencemobile/constants/styles.dart';
 
 class ClickableCard extends StatelessWidget {
   final Widget child;
   final void Function() onClick;
+  final BorderRadius borderRadius;
 
-  const ClickableCard({super.key, required this.child, required this.onClick});
+  final Color color;
+  const ClickableCard(
+      {super.key,
+      required this.child,
+      required this.onClick,
+      this.borderRadius = const BorderRadius.all(Radius.circular(10)),
+      this.color = AppColors.secondary});
 
-  factory ClickableCard.coloumn(
-      {key, required List<Widget> children, required onClick}) {
-    return ClickableCard(
-        key: key, onClick: onClick, child: Column(children: children));
-  }
-
-  factory ClickableCard.row(
-          {key, required List<Widget> children, required onClick}) =>
-      ClickableCard(key: key, onClick: onClick, child: Row(children: children));
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,10 +21,10 @@ class ClickableCard extends StatelessWidget {
       child: Material(
         elevation: 6,
         shadowColor: Colors.black,
-        color: const Color.fromRGBO(37, 37, 37, 1),
-        borderRadius: BorderRadius.circular(10),
+        color: color,
+        borderRadius: borderRadius,
         child: InkWell(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: borderRadius,
           onTap: onClick,
           child: Container(
             padding: const EdgeInsets.all(13),
