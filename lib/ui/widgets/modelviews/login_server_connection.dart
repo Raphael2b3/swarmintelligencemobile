@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:swarmintelligencemobile/ui/widgets/inputs/buttons/votebutton.dart';
 import 'package:swarmintelligencemobile/ui/widgets/inputs/default_textfield.dart';
-import 'package:swarmintelligencemobile/ui/widgets/primitives/default_card.dart';
 
 class LoginServerConnection extends StatelessWidget {
   LoginServerConnection({super.key});
@@ -20,7 +19,7 @@ class LoginServerConnection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultCard(
+    return Container(
         child: Column(
       children: [
         DefaultTextField(

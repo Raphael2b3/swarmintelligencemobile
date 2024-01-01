@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 import 'package:swarmintelligencemobile/models/app.dart';
 import 'package:swarmintelligencemobile/states/active_server.dart';
 import 'package:swarmintelligencemobile/ui/widgets/inputs/buttons/votebutton.dart';
-import 'package:swarmintelligencemobile/ui/widgets/inputs/expandable_card.dart';
 
 class ServerCard extends StatefulWidget {
   final Server server;
@@ -47,11 +46,7 @@ class _ServerCardState extends State<ServerCard> {
   @override
   Widget build(BuildContext context) {
     var activeServer = Provider.of<ActiveServer>(context);
-    return ExpandableCard(
-      hiddenchild: Column(children: [
-        Votebutton(onClick: () {}, text: "Delete"),
-        Votebutton(onClick: () {}, text: "Edit"),
-      ]),
+    return Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -69,6 +64,10 @@ class _ServerCardState extends State<ServerCard> {
               Text("${widget.active ? "(Active) " : ""}${widget.server.name}"),
             ],
           ),
+          Column(children: [
+            Votebutton(onClick: () {}, text: "Delete"),
+            Votebutton(onClick: () {}, text: "Edit"),
+          ]),
           if (!widget.active)
             Votebutton.up(
               onClick: () {

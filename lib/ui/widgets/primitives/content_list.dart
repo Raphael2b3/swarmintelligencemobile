@@ -13,6 +13,7 @@ class ContentList extends StatelessWidget {
         color: AppColors.secondary,
         onRefresh: () async => print("refresh"),
         child: ListView.builder(
+          padding: const EdgeInsets.all(6),
           itemCount: 100,
           itemBuilder: (context, index) =>
               const Statement(text: "geiler schei0"),

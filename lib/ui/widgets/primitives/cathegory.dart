@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:swarmintelligencemobile/ui/widgets/inputs/expandable_card.dart';
 
 class CathegoryCard extends StatelessWidget {
   final Widget title;
@@ -8,7 +7,9 @@ class CathegoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ExpandableCard(
-        hiddenchild: Column(children: contents), child: title);
+    return Container(
+        child: Row(
+      children: [title, Column(children: contents)],
+    ));
   }
 }
