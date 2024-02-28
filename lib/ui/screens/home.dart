@@ -15,9 +15,10 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ChangeNotifierProvider<History> history = ChangeNotifierProvider<History>(
-        create: (context) => History(queries: null, interactions: null));
-    ChangeNotifierProvider<ActiveServer> activeserver =
+    ChangeNotifierProvider<History> historyCNF =
+        ChangeNotifierProvider<History>(
+            create: (context) => History(queries: null, interactions: null));
+    ChangeNotifierProvider<ActiveServer> activeserverCNF =
         ChangeNotifierProvider<ActiveServer>(
       create: (context) => ActiveServer(),
       //update: (BuildContext context, value, previous) {},
@@ -39,19 +40,32 @@ class Home extends StatelessWidget {
     ];
 
     return MultiProvider(
-      providers: [history, activeserver],
-      child: Scaffold(
-        backgroundColor: AppColors.backgroundark,
-        body: Container(margin: const EdgeInsets.all(13), child: navShell),
-        bottomNavigationBar: BottomNavigationBar(
-          onTap: changeTab,
-          currentIndex: navShell.currentIndex,
-          backgroundColor: Colors.transparent,
-          items: items,
-          unselectedItemColor: AppColors.secondary,
-          selectedItemColor: AppColors.primaryText,
-        ),
-      ),
+      providers: [historyCNF, activeserverCNF],
+      builder: (context, __) {
+        var activeserver = context.watch<ActiveServer>();
+        return Scaffold(
+          backgroundColor: AppColors.backgroundark,
+          body: Container(
+              margin: const EdgeInsets.all(13),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(activeserver.active?.name ??
+                      "Add a Server in Settings to get started"),
+                  Expanded(child: navShell),
+                ],
+              )),
+          bottomNavigationBar: BottomNavigationBar(
+            onTap: changeTab,
+            currentIndex: navShell.currentIndex,
+            backgroundColor: Colors.transparent,
+            items: items,
+            unselectedItemColor: AppColors.secondary,
+            selectedItemColor: AppColors.primaryText,
+          ),
+        );
+      },
     );
   }
 }

@@ -32,9 +32,6 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(
-        right: 45,
-      ),
       alignment: Alignment.centerLeft,
       height: 40,
       decoration: const BoxDecoration(

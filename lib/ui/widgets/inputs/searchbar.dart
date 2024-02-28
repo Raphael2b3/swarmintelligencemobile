@@ -20,7 +20,6 @@ class Searchbar extends StatelessWidget {
         DefaultTextField(
           hintText: "Search...",
         ),
-        const SettingCircle()
       ],
     );
   }
